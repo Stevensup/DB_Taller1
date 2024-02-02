@@ -8,4 +8,34 @@ h3 {
 
 input[type="button"] {
   margin-bottom: 0;
+  background-color: #016d95;
+  color: #fff;
+  cursor: pointer;
+  border: none;
 }
+
+body {
+  background-color: #8AA6A3;
+}
+
+.ADD {
+  margin-bottom: 0;
+  color: #fff;
+}
+
+/* Agrega el siguiente estilo para el botón dentro del contenedor .ADD */
+.ADD input[type="button"] {
+  cursor: pointer;
+  border: none;
+}
+
+/* Puedes mantener la regla existente para el botón:hover si es necesario */
+.ADD input[type="button"]:hover {
+  background-color: #016d95;
+}
+
+/* Puedes mantener la regla existente para el botón:hover si es necesario */
+.ADD input[type="button"]:active {
+  background-color: #016d95;
+}
+

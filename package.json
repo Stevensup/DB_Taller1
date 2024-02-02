@@ -1,17 +1,22 @@
 {
-  "name": "electron-demo",
+  "name": "electron",
   "version": "1.0.0",
-  "description": "Electron demo app for a school presentation",
+  "description": "Task DBA I",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "author": "Simon Schiller",
-  "license": "MIT",
+  "author": "Steven Useche",
+  "license": "N/A",
   "devDependencies": {
     "electron": "^1.4.8"
   },
   "dependencies": {
     "nedb": "^1.8.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simonschiller/electron.git"
+  },
+  "homepage": "https://github.com/simonschiller/electron#readme"
 }
