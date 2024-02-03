@@ -16,7 +16,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/simonschiller/electron.git"
-  },
-  "homepage": "https://github.com/simonschiller/electron#readme"
+    "url": "git+https://github.com/Stevensup/DB_Taller1.git"
+  }
 }

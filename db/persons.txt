@@ -1,3 +1,2 @@
-{"firstname":"lorena","lastname":"useche","year":"2023","fileInput":"C:\\fakepath\\data (5).txt","_id":"pYfEN165A2n2Negb"}
-{"firstname":"brayan","lastname":"useche","year":"2024","fileInput":"C:\\fakepath\\data.txt","_id":"qRnlaOo8mw1v8CYy"}
-{"firstname":"vane","lastname":"useche","year":"2020","fileInput":"C:\\fakepath\\data (3).txt","_id":"wlnDNe8QTDZejzLx"}
+{"firstname":"santiago","lastname":"melo","year":"2023","fileInput":"C:\\fakepath\\gif.gif","_id":"PdeyAQVg8BSNYOtJ"}
+{"$$deleted":true,"_id":"PdeyAQVg8BSNYOtJ"}
