@@ -1,5 +1,5 @@
 {
-  "name": "electron",
+  "name": "electrons",
   "version": "1.0.0",
   "description": "Task DBA I",
   "main": "main.js",
@@ -12,6 +12,7 @@
     "electron": "^1.4.8"
   },
   "dependencies": {
+    "electron-packager": "^17.1.2",
     "fs-extra": "^11.2.0",
     "nedb": "^1.8.0"
   },

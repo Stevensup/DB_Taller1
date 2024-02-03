@@ -12,3 +12,5 @@ Esta aplicación de escritorio Electron ha sido desarrollada como parte de la ma
 3. Ejecuta el siguiente comando para instalar las dependencias:
    ```bash
    npm install
+   npx electron-packager . YourAppName --platform=win32 --arch=x64 --electron-version=1.4.13 --arch=x64
+
