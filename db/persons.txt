@@ -1,2 +1,4 @@
-{"firstname":"asdax","lastname":"asdax","year":"2020","fileInput":"","_id":"mk6BKtrrY21zc3dD"}
-{"firstname":"useche","lastname":"useche","year":"2022","fileInput":"","_id":"mk6BKtrrY21zc3dD"}
+{"firstname":"asd","lastname":"asd","year":"1212","fileInput":"/Users/steve/Downloads/data (6).txt","_id":"7RrteLily1MDzKrO"}
+{"firstname":"asd","lastname":"asd","year":"2323","fileInput":"/Users/steve/Downloads/data (1).txt","_id":"AWBMEYxsSlLadHei"}
+{"firstname":"asd","lastname":"asd","year":"2323","fileInput":"C:\\fakepath\\data (1).txt","_id":"kT8xxWoLSvj9NJJ1"}
+{"firstname":"asd","lastname":"asd","year":"2323","fileInput":"/Users/steve/Downloads/data (1).txt","_id":"xu35sN1iY5YwWp8N"}

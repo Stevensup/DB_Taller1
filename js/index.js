@@ -1,4 +1,6 @@
 const database = require('./js/database');
+const { app } = require('electron').remote;
+const path = require('path');  // Agrega esta línea
 
 window.onload = function() {
 
@@ -13,9 +15,10 @@ window.onload = function() {
     var lastname = document.getElementById('lastname');
     var year = document.getElementById('year');
     var fileInput = document.getElementById('fileInput');
+    const filePath = fileInput.files[0].path;
 
     // Save the person in the database
-    database.addPerson(firstname.value, lastname.value, year.value , fileInput.value);
+    database.addPerson(firstname.value, lastname.value, year.value, filePath);
 
     // Reset the input fields
     firstname.value = '';
@@ -30,29 +33,7 @@ window.onload = function() {
   });
 }
 
-// // Populates the persons table
-// function populateTable() {
 
-//   // Retrieve the persons
-//   database.getPersons(function(persons) {
-
-//     // Generate the table body
-//     var tableBody = '';
-//     for (i = 0; i < persons.length; i++) {
-//       tableBody += '<tr>';
-//       tableBody += '  <td>' + persons[i].firstname + '</td>';
-//       tableBody += '  <td>' + persons[i].lastname + '</td>';
-//       tableBody += '  <td>' + persons[i].year + + '</td>';
-//       tableBody += '  <td>' + persons[i].fileInput + + '</td>';
-//       tableBody += '  <td><input type="button" value="Delete" onclick="deletePerson(\'' + persons[i]._id + '\')"></td>';
-//       tableBody += '  <td><input type="button" value="Update" onclick="updatePerson(\'' + persons[i]._id + '\')"></td>'
-//       tableBody += '</tr>';
-//     }
-
-//     // Fill the table content
-//     document.getElementById('tablebody').innerHTML = tableBody;
-//   });
-// }
 
 // Populates the persons table with optional search filter
 function populateTable(filter = '') {
@@ -88,6 +69,7 @@ function populateTable(filter = '') {
           <td>${person.fileInput}</td>
           <td><input type="button" value="Delete" onclick="deletePerson('${person._id}')"></td>
           <td><input type="button" value="Update" onclick="showUpdateForm('${person._id}', '${person.firstname}', '${person.lastname}', '${person.year}', '${person.fileInput}')"></td>
+          <td><button onclick="downloadFile('${person.fileInput}')">Descargar Archivo</button></td>
         `;
 
         // Append the row to the table body
@@ -157,4 +139,31 @@ function updatePerson() {
   populateTable();
 }
 
-// ... Otras funciones y código ...
+// Añade esta función para descargar un archivo
+function downloadFile(filePath) {
+  // Abre el cuadro de diálogo para elegir la ubicación de descarga
+  const { dialog } = require('electron').remote;
+
+  dialog.showSaveDialog({
+    defaultPath: filePath, // Establece la carpeta de descargas predeterminada como la ruta del archivo original
+    buttonLabel: 'Guardar', // Cambia la etiqueta del botón de guardar
+    title: 'Guardar Archivo', // Título del cuadro de diálogo
+    filters: [
+      { name: 'Archivos de Texto', extensions: ['txt'] },
+      // Puedes agregar más tipos de archivos según sea necesario
+    ],
+  }).then(result => {
+    if (!result.canceled && result.filePath) {
+      // Puedes copiar el archivo a la ubicación seleccionada por el usuario si es necesario
+      const fs = require('fs').promises;
+      fs.copyFile(filePath, result.filePath)
+        .then(() => {
+          console.log('Archivo guardado exitosamente en la ubicación seleccionada:', result.filePath);
+        })
+        .catch(error => {
+          console.error('Error al guardar el archivo:', error);
+        });
+    }
+  });
+}
+

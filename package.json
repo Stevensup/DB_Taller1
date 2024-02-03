@@ -12,6 +12,7 @@
     "electron": "^1.4.8"
   },
   "dependencies": {
+    "fs-extra": "^11.2.0",
     "nedb": "^1.8.0"
   },
   "repository": {
