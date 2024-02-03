@@ -87,7 +87,7 @@ function populateTable(filter = '') {
           <td>${person.year}</td>
           <td>${person.fileInput}</td>
           <td><input type="button" value="Delete" onclick="deletePerson('${person._id}')"></td>
-          <td><input type="button" value="Update" onclick="updatePerson('${person._id}')"></td>
+          <td><input type="button" value="Update" onclick="showUpdateForm('${person._id}', '${person.firstname}', '${person.lastname}', '${person.year}', '${person.fileInput}')"></td>
         `;
 
         // Append the row to the table body
@@ -121,3 +121,40 @@ function deletePerson(id) {
   populateTable();
   alert('Usuario eliminado exitosamente.');
 }
+
+function closeUpdateModal() {
+  document.getElementById('updateModal').style.display = 'none';
+}
+// Añade la función para mostrar el modal de actualización
+function showUpdateForm(id, firstname, lastname, year, fileInput) {
+  document.getElementById('updatedFirstname').value = firstname;
+  document.getElementById('updatedLastname').value = lastname;
+  document.getElementById('updatedYear').value = year;
+  // Repite lo mismo para otros campos actualizados
+  document.getElementById('updateModal').style.display = 'block';
+  document.getElementById('update').dataset.idToUpdate = id; // Almacena el ID para su uso posterior
+}
+
+// Añade la función de actualización (ajusta según sea necesario)
+function updatePerson() {
+  // Obtiene los datos actualizados del modal
+  var updatedFirstname = document.getElementById('updatedFirstname').value;
+  var updatedLastname = document.getElementById('updatedLastname').value;
+  var updatedYear = document.getElementById('updatedYear').value;
+  var updatedFileInput = document.getElementById('updatedFileInput').value;
+  // Repite lo mismo para otros campos actualizados
+
+  // Obtiene el ID de la persona a actualizar
+  var idToUpdate = document.getElementById('update').dataset.idToUpdate;
+
+  // Actualiza la persona en la base de datos (ajusta según tu lógica)
+  database.updatePerson(idToUpdate, updatedFirstname, updatedLastname, updatedYear, updatedFileInput);
+
+  // Cierra el modal después de la actualización
+  closeUpdateModal();
+
+  // Vuelve a cargar la tabla actualizada
+  populateTable();
+}
+
+// ... Otras funciones y código ...

@@ -9,21 +9,22 @@
 <body>
   <div class="container">
     <center>
-      <h3>Agregar lenguajes</h3>
+      <h3>Agregar Doctores</h3>
     </center>
     <div class="row">
       <div class="four columns">
-        <label for="firstname">Lenguaje</label>
+        <label for="firstname">Nombres</label>
         <input class="u-full-width" placeholder="John" id="firstname" type="text" required>
       </div>
       <div class="four columns">
-        <label for="lastname">Creador</label>
+        <label for="lastname">Apellidos</label>
         <input class="u-full-width" placeholder="Doe" id="lastname" type="text" required>
       </div>
       <div class="four columns">
-        <label for="year">Año de Salida</label>
+        <label for="year">Año de Ingreso</label>
         <input class="u-full-width" placeholder="Doe" id="year" type="number" required>
-      </div>
+        </div>
+        <center>
         <div class="four columns">
           <label for="fileInput">Archivo Adjunto</label>
           <input type="file" id="fileInput" accept="*" required>
@@ -33,6 +34,8 @@
         <label for="add" class="invisible">x</label>
         <input class="button-primary" value="Agregar" id="add" type="button">
       </div>
+        </center>
+   
     </div>
 
  
@@ -43,7 +46,7 @@
             <div class="row">
               <div class="four columns">
                 <label for="searchInput">Buscar:</label>
-                <input class="u-full-width" placeholder="Nombre..." id="searchInput" type="text" oninput="searchAndUpdateTable()">
+                <input class="u-full-width" placeholder="Ingresa dato a buscar..." id="searchInput" type="text" oninput="searchAndUpdateTable()">
               </div>
             </div>
 
@@ -51,10 +54,10 @@
             <table class="u-full-width">
               <thead>
                 <tr>
-                  <th>Firstname</th>
-                  <th>Lastname</th>
-                  <th>Year</th>
-                  <th>File</th>
+                  <th>Nombres</th>
+                  <th>Apellidos</th>
+                  <th>Año de Ingreso</th>
+                  <th>Ruta Archivo</th>
                   <th></th>
                 </tr>
               </thead>
@@ -64,6 +67,36 @@
       </div>
      
   </div>
+
+ <!-- Agrega el modal -->
+ <div id="updateModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeUpdateModal()">&times;</span>
+    <h3>Actualizar Persona</h3>
+    <div class="two columns">
+      <label for="updatedFirstname">Nombres</label>
+      <input class="u-full-width" placeholder="John" id="updatedFirstname" type="text" required>
+    </div>
+    <div class="two columns">
+      <label for="updatedLastname">Apellidos</label>
+      <input class="u-full-width" placeholder="Doe" id="updatedLastname" type="text" required>
+    </div>
+    <div class="two columns">
+      <label for="updatedYear">Año de Ingreso</label>
+      <input class="u-full-width" placeholder="Doe" id="updatedYear" type="number" required>
+    </div>
+    <div class="two columns">
+      <label for="updatedFileInput">Archivo Adjunto</label>
+      <input type="file" id="updatedFileInput" accept="*" required>
+    </div>
+    <br>
+    <div class="ADD">
+      <label for="update" class="invisible">x</label>
+      <input class="button-primary" value="Actualizar" id="update" type="button" onclick="updatePerson()">
+    </div>
+  </div>
+</div>
+
 
   <script type="text/javascript">
     var remote = require('electron').remote;

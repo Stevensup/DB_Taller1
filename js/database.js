@@ -38,3 +38,18 @@ exports.deletePerson = function(id) {
   });
 }
 
+// Update a person
+exports.updatePerson = function(id, updatedFirstname, updatedLastname, updatedYear, updatedFileInput) {
+  var updateData = {
+    $set: {
+      "firstname": updatedFirstname,
+      "lastname": updatedLastname,
+      "year": updatedYear,
+      "fileInput": updatedFileInput
+    }
+  };
+
+  db.update({ _id: id }, updateData, {}, function(err, numUpdated) {
+    // Do nothing
+  });
+};

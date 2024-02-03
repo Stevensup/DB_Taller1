@@ -1,2 +1,2 @@
-{"firstname":"santiago","lastname":"melo","year":"2023","fileInput":"C:\\fakepath\\gif.gif","_id":"PdeyAQVg8BSNYOtJ"}
-{"$$deleted":true,"_id":"PdeyAQVg8BSNYOtJ"}
+{"firstname":"asdax","lastname":"asdax","year":"2020","fileInput":"","_id":"mk6BKtrrY21zc3dD"}
+{"firstname":"useche","lastname":"useche","year":"2022","fileInput":"","_id":"mk6BKtrrY21zc3dD"}
