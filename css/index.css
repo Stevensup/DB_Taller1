@@ -23,31 +23,27 @@ body {
   color: #fff;
 }
 
-/* Agrega el siguiente estilo para el botón dentro del contenedor .ADD */
 .ADD input[type="button"] {
   cursor: pointer;
   border: none;
 }
 
-/* Puedes mantener la regla existente para el botón:hover si es necesario */
 .ADD input[type="button"]:hover {
   background-color: #016d95;
 }
 
-/* Puedes mantener la regla existente para el botón:hover si es necesario */
 .ADD input[type="button"]:active {
   background-color: #016d95;
 }
 
-/* Dentro de tu archivo CSS */
 .modal {
-  display: none; /* Asegúrate de ocultar el modal inicialmente */
+  display: none; 
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.5); /* Fondo oscuro semi-transparente */
+  background-color: rgba(0,0,0,0.5); 
 }
 
 .modal-content {

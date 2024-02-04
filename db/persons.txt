@@ -1,8 +1,1 @@
-{"firstname":"zzz","lastname":"zzz","year":"1111","fileInput":"","_id":"AWBMEYxsSlLadHei"}
-{"firstname":"asd","lastname":"asd","year":"2323","fileInput":"C:\\fakepath\\data (1).txt","_id":"kT8xxWoLSvj9NJJ1"}
-{"firstname":"asd","lastname":"asd","year":"2323","fileInput":"/Users/steve/Downloads/data (1).txt","_id":"xu35sN1iY5YwWp8N"}
-{"$$deleted":true,"_id":"AWBMEYxsSlLadHei"}
-{"firstname":"sss","lastname":"sss","year":"2323","fileInput":"C:\\fakepath\\data (1).txt","_id":"kT8xxWoLSvj9NJJ1"}
-{"firstname":"sss","lastname":"sss","year":"2323","fileInput":"C:\\fakepath\\data (1).txt","_id":"kT8xxWoLSvj9NJJ1"}
-{"$$deleted":true,"_id":"kT8xxWoLSvj9NJJ1"}
-{"firstname":"asd","lastname":"asd","year":"2323","fileInput":"/Users/steve/Downloads/data.txt","_id":"yt7aZKO0YVU0uriS"}
+{"firstname":"alejandra","lastname":"marida","year":"2022","fileInput":"/Users/steve/Downloads/data (2).txt","_id":"PlD1WjcyVusLea9X"}
