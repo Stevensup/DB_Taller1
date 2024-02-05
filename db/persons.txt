@@ -1,1 +1,5 @@
-{"firstname":"alejandra","lastname":"marida","year":"2022","fileInput":"/Users/steve/Downloads/data (2).txt","_id":"PlD1WjcyVusLea9X"}
+{"firstname":"BRAYAN","lastname":"USECHE","year":"2023","fileInput":"/Users/steve/Downloads/data (2).txt","_id":"kbafGAHcUzcVK1pv"}
+{"$$deleted":true,"_id":"kbafGAHcUzcVK1pv"}
+{"firstname":"LORENA","lastname":"MORA","year":"2024","fileInput":"/Users/steve/Downloads/data (4).txt","_id":"fbOT0uSN283fl2dr"}
+{"firstname":"ANGIE","lastname":"MORA","year":"2024","fileInput":"/Users/steve/Downloads/data (4).txt","_id":"fbOT0uSN283fl2dr"}
+{"firstname":"BRAYAN","lastname":"USECHE","year":"2022","fileInput":"/Users/steve/Downloads/dbeaver-ce-23.3.3-macos-aarch64.dmg","_id":"lfNWTdfQ4iutVicQ"}

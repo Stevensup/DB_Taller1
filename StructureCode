@@ -1,0 +1,20 @@
+```
+└── 📁electron-APPDESK
+    └── .DS_Store
+    └── README.md
+    └── about.html
+    └── 📁css
+        └── index.css
+        └── skeleton.css
+    └── 📁db
+        └── persons.db
+        └── persons.txt
+    └── 📁images
+    └── index.html
+    └── 📁js
+        └── database.js
+        └── index.js
+    └── main.js
+    └── package-lock.json
+    └── package.json
+```

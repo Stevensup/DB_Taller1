@@ -1,4 +1,12 @@
+<!-- 
+  Autor: [Tu Nombre]
+  Fecha: [Fecha Actual]
+  Descripción: Página principal de una aplicación Electron para agregar doctores y visualizarlos en una tabla.
+-->
+
+<!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>Electron APP-DESK</title>
@@ -6,6 +14,7 @@
   <link rel="stylesheet" href="css/index.css">
   <script type="text/javascript" src="js/index.js"></script>
 </head>
+
 <body>
   <div class="container">
     <center>
@@ -13,92 +22,86 @@
     </center>
     <div class="row">
       <div class="four columns">
-        <label for="firstname">Nombres</label>
-        <input class="u-full-width" placeholder="John" id="firstname" type="text" required>
+        <label for="firstname">firstname</label>
+        <input class="u-full-width" placeholder="firstname" id="firstname" type="text" required>
       </div>
       <div class="four columns">
-        <label for="lastname">Apellidos</label>
-        <input class="u-full-width" placeholder="Doe" id="lastname" type="text" required>
+        <label for="lastname">lastname</label>
+        <input class="u-full-width" placeholder="lastname" id="lastname" type="text" required>
       </div>
       <div class="four columns">
-        <label for="year">Año de Ingreso</label>
-        <input class="u-full-width" placeholder="Doe" id="year" type="number" required>
-        </div>
-        <center>
+        <label for="year">year admision</label>
+        <input class="u-full-width" placeholder="year" id="year" type="number" required>
+      </div>
+      <center>
         <div class="four columns">
-          <label for="fileInput">Archivo Adjunto</label>
+          <label for="fileInput">File</label>
           <input type="file" id="fileInput" accept="*" required>
         </div>
-      </div>
-      <div class="ADD">
-        <label for="add" class="invisible">x</label>
-        <input class="button-primary" value="Agregar" id="add" type="button">
-      </div>
-        </center>
-   
+      </center>
     </div>
-
- 
-        
-      <div class="container">
-            <h3>Todos los lenguajes:</h3>
-
-            <div class="row">
-              <div class="four columns">
-                <label for="searchInput">Buscar:</label>
-                <input class="u-full-width" placeholder="Ingresa dato a buscar..." id="searchInput" type="text" oninput="searchAndUpdateTable()">
-              </div>
-            </div>
-
-            
-            <table class="u-full-width">
-              <thead>
-                <tr>
-                  <th>Nombres</th>
-                  <th>Apellidos</th>
-                  <th>Año de Ingreso</th>
-                  <th>Ruta Archivo</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody id="tablebody">
-              </tbody>
-            </table>
-      </div>
-     
-  </div>
-
- <!-- Agrega el modal -->
- <div id="updateModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeUpdateModal()">&times;</span>
-    <h3>Actualizar Persona</h3>
-    <div class="two columns">
-      <label for="updatedFirstname">Nombres</label>
-      <input class="u-full-width" placeholder="John" id="updatedFirstname" type="text" required>
-    </div>
-    <div class="two columns">
-      <label for="updatedLastname">Apellidos</label>
-      <input class="u-full-width" placeholder="Doe" id="updatedLastname" type="text" required>
-    </div>
-    <div class="two columns">
-      <label for="updatedYear">Año de Ingreso</label>
-      <input class="u-full-width" placeholder="Doe" id="updatedYear" type="number" required>
-    </div>
-    <div class="two columns">
-      <label for="updatedFileInput">Archivo Adjunto</label>
-      <input type="file" id="updatedFileInput" accept="*" required>
-    </div>
-    <br>
     <div class="ADD">
-      <label for="update" class="invisible">x</label>
-      <input class="button-primary" value="Actualizar" id="update" type="button" onclick="updatePerson()">
+      <label for="add" class="invisible">x</label>
+      <input class="button-primary" value="ADD" id="add" type="button">
     </div>
   </div>
-</div>
 
+  <div class="container">
+    <h3>all Doctors:</h3>
+    <div class="row">
+      <div class="four columns">
+        <label for="searchInput">Search:</label>
+        <input class="u-full-width" placeholder="Ingresa dato a buscar..." id="searchInput" type="text"
+          oninput="searchAndUpdateTable()">
+      </div>
+    </div>
+
+    <table class="u-full-width">
+      <thead>
+        <tr>
+          <th>firstname</th>
+          <th>lastname</th>
+          <th>Year Admision</th>
+          <th>Rute File</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="tablebody">
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Agrega el modal -->
+  <div id="updateModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeUpdateModal()">&times;</span>
+      <h3>Actualizar Persona</h3>
+      <div class="two columns">
+        <label for="updatedFirstname">firstname</label>
+        <input class="u-full-width" placeholder="John" id="updatedFirstname" type="text" required>
+      </div>
+      <div class="two columns">
+        <label for="updatedLastname">lastname</label>
+        <input class="u-full-width" placeholder="Doe" id="updatedLastname" type="text" required>
+      </div>
+      <div class="two columns">
+        <label for="updatedYear">Year Admision</label>
+        <input class="u-full-width" placeholder="Doe" id="updatedYear" type="number" required>
+      </div>
+      <div class="two columns">
+        <label for="updatedFileInput">Rute File</label>
+        <input type="file" id="updatedFileInput" accept="*" required>
+      </div>
+      <br>
+      <div class="ADD">
+        <label for="update" class="invisible">x</label>
+        <input class="button-primary" value="Actualizar" id="update" type="button" onclick="updatePerson()">
+      </div>
+    </div>
+  </div>
 
   <script type="text/javascript">
+    // Agrega el código para abrir la consola de desarrollo y recargar la aplicación con combinaciones de teclas
     var remote = require('electron').remote;
     document.addEventListener('keydown', function (e) {
       if (e.which === 123) {
@@ -107,6 +110,7 @@
         location.reload();
       }
     });
-</script>
+  </script>
 </body>
+
 </html>

@@ -1,34 +1,47 @@
+// Autor: Steven Useche
+// Fecha: 2024-02-04
+// Descripción: Este script proporciona funcionalidades para interactuar con una base de datos 
+//              de personas, permitiendo agregar, obtener, eliminar y actualizar información. 
+//              También incluye la manipulación de archivos y la visualización en una interfaz de usuario.
+
 const database = require('./js/database');
 const { app } = require('electron').remote;
-const path = require('path');  // Agrega esta línea
+const path = require('path');
 
+/**
+ * Evento que se ejecuta al cargar la ventana.
+ */
 window.onload = function() {
-
+  // Poblar la tabla con los datos existentes.
   populateTable();
 
+  // Agregar evento al botón "Agregar".
   document.getElementById('add').addEventListener('click', () => {
-
     var firstname = document.getElementById('firstname');
     var lastname = document.getElementById('lastname');
     var year = document.getElementById('year');
     var fileInput = document.getElementById('fileInput');
     const filePath = fileInput.files[0].path;
 
+    // Agregar persona a la base de datos y copiar el archivo a la carpeta de imágenes.
     database.addPerson(firstname.value, lastname.value, year.value, filePath);
 
+    // Limpiar los campos del formulario.
     firstname.value = '';
     lastname.value = '';
     year.value = '';
-    fileInput.value = ''; 
+    fileInput.value = '';
 
+    // Actualizar la tabla y mostrar un mensaje de éxito.
     populateTable();
     alert('Usuario creado exitosamente.');
-
   });
 }
 
-
-
+/**
+ * Función para poblar la tabla con datos de la base de datos.
+ * @param {string} filter - Filtro para buscar personas en la tabla.
+ */
 function populateTable(filter = '') {
   database.getPersons(function(persons) {
     var tableBodyElement = document.getElementById('tablebody');
@@ -36,7 +49,7 @@ function populateTable(filter = '') {
     tableBodyElement.innerHTML = '';
 
     if (persons.length === 0) {
-      tableBodyElement.innerHTML = '<tr><td colspan="6">No hay datos disponibles</td></tr>';
+      tableBodyElement.innerHTML = '<tr><td colspan="7">No hay datos disponibles</td></tr>';
       return;
     }
 
@@ -62,29 +75,44 @@ function populateTable(filter = '') {
     }
 
     if (tableBodyElement.children.length === 0) {
-      tableBodyElement.innerHTML = '<tr><td colspan="6">No hay coincidencias con el filtro</td></tr>';
+      tableBodyElement.innerHTML = '<tr><td colspan="7">No hay coincidencias con el filtro</td></tr>';
     }
   });
 }
 
+/**
+ * Función para realizar una búsqueda y actualizar la tabla.
+ */
 function searchAndUpdateTable() {
   var searchInputValue = document.getElementById('searchInput').value;
-
   populateTable(searchInputValue);
 }
 
-
+/**
+ * Elimina una persona de la base de datos y actualiza la tabla.
+ * @param {string} id - Identificador único de la persona a eliminar.
+ */
 function deletePerson(id) {
-
   database.deletePerson(id);
-
   populateTable();
   alert('Usuario eliminado exitosamente.');
 }
 
+/**
+ * Cierra el modal de actualización de datos.
+ */
 function closeUpdateModal() {
   document.getElementById('updateModal').style.display = 'none';
 }
+
+/**
+ * Muestra el formulario de actualización de datos.
+ * @param {string} id - Identificador único de la persona a actualizar.
+ * @param {string} firstname - Nombre actual de la persona.
+ * @param {string} lastname - Apellido actual de la persona.
+ * @param {number} year - Año de nacimiento actual de la persona.
+ * @param {string} fileInput - Ruta del archivo actual de la persona.
+ */
 function showUpdateForm(id, firstname, lastname, year, fileInput) {
   document.getElementById('updatedFirstname').value = firstname;
   document.getElementById('updatedLastname').value = lastname;
@@ -93,6 +121,9 @@ function showUpdateForm(id, firstname, lastname, year, fileInput) {
   document.getElementById('update').dataset.idToUpdate = id; // Almacena el ID para su uso posterior
 }
 
+/**
+ * Actualiza la información de una persona en la base de datos y actualiza la tabla.
+ */
 function updatePerson() {
   var updatedFirstname = document.getElementById('updatedFirstname').value;
   var updatedLastname = document.getElementById('updatedLastname').value;
@@ -103,11 +134,15 @@ function updatePerson() {
 
   database.updatePerson(idToUpdate, updatedFirstname, updatedLastname, updatedYear, updatedFileInput);
 
+  // Cierra el modal de actualización y actualiza la tabla.
   closeUpdateModal();
-
   populateTable();
 }
 
+/**
+ * Abre un diálogo para guardar el archivo en una ubicación específica.
+ * @param {string} filePath - Ruta del archivo a descargar.
+ */
 function downloadFile(filePath) {
   const { dialog } = require('electron').remote;
 
@@ -131,4 +166,3 @@ function downloadFile(filePath) {
     }
   });
 }
-
